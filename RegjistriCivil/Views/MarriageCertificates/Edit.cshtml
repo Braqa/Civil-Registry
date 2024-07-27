@@ -1,0 +1,200 @@
+﻿@model RegjistriCivil.Models.MarriageCertificate
+
+@{
+    ViewData["Title"] = "Edit Marriage Certificate";
+}
+
+<div class="container">
+
+    <h1>Edit Marriage Certificate</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+
+                @Html.HiddenFor(m => m.Husband.Id)
+                @Html.HiddenFor(m => m.Wife.Id)
+                @Html.HiddenFor(m => m.HusbandFather.Id)
+                @Html.HiddenFor(m => m.HusbandMother.Id)
+                @Html.HiddenFor(m => m.WifeFather.Id)
+                @Html.HiddenFor(m => m.WifeMother.Id)
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @* Users personal data *@
+                <div class="form-group">
+                    <label asp-for="DocumentIssuingDate" class="control-label"></label>
+                    <input asp-for="DocumentIssuingDate" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="DocumentIssuingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DocumentIssuedBy" class="control-label"></label>
+                    <input asp-for="DocumentIssuedBy" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="DocumentIssuedBy" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SerialNumber" class="control-label"></label>
+                    <input asp-for="SerialNumber" class="form-control" />
+                    <span asp-validation-for="SerialNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReferenceNumber" class="control-label"></label>
+                    <input asp-for="ReferenceNumber" class="form-control" />
+                    <span asp-validation-for="ReferenceNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Municipality" class="control-label"></label>
+                    <input asp-for="Municipality" class="form-control" />
+                    <span asp-validation-for="Municipality" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PlaceOfMarriage" class="control-label"></label>
+                    <input asp-for="PlaceOfMarriage" class="form-control" />
+                    <span asp-validation-for="PlaceOfMarriage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateOfMarriage" class="control-label"></label>
+                    <input asp-for="DateOfMarriage" class="form-control" />
+                    <span asp-validation-for="DateOfMarriage" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MaritalStatus" class="control-label"></label>
+                    <select asp-for="MaritalStatus" asp-items="Html.GetEnumSelectList<MaritalStatus>()" class="form-control">
+                        <option value="">Please select martial status</option>
+                    </select>
+                    <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                </div>
+
+
+
+                @* Husband *@
+                <h3>Husband</h3>
+
+                <div class="form-group">
+                    <label asp-for="Husband.FirstName" class="control-label"></label>
+                    <input asp-for="Husband.FirstName" class="form-control" />
+                    <span asp-validation-for="Husband.FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Husband.LastName" class="control-label"></label>
+                    <input asp-for="Husband.LastName" class="form-control" />
+                    <span asp-validation-for="Husband.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Husband.DateOfBirth" class="control-label"></label>
+                    <input asp-for="Husband.DateOfBirth" class="form-control" />
+                    <span asp-validation-for="Husband.DateOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Husband.PlaceOfBirth" class="control-label"></label>
+                    <input asp-for="Husband.PlaceOfBirth" class="form-control" />
+                    <span asp-validation-for="Husband.PlaceOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Husband.PersonalNumber" class="control-label"></label>
+                    <input asp-for="Husband.PersonalNumber" class="form-control" />
+                    <span asp-validation-for="Husband.PersonalNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Husband.Nationality" class="control-label"></label>
+                    <input asp-for="Husband.Nationality" class="form-control" />
+                    <span asp-validation-for="Husband.Nationality" class="text-danger"></span>
+                </div>
+
+                @* Wife *@
+                <h3>Wife</h3>
+
+                <div class="form-group">
+                    <label asp-for="Wife.FirstName" class="control-label"></label>
+                    <input asp-for="Wife.FirstName" class="form-control" />
+                    <span asp-validation-for="Wife.FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Wife.LastName" class="control-label"></label>
+                    <input asp-for="Wife.LastName" class="form-control" />
+                    <span asp-validation-for="Wife.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Wife.DateOfBirth" class="control-label"></label>
+                    <input asp-for="Wife.DateOfBirth" class="form-control" />
+                    <span asp-validation-for="Wife.DateOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Wife.PlaceOfBirth" class="control-label"></label>
+                    <input asp-for="Wife.PlaceOfBirth" class="form-control" />
+                    <span asp-validation-for="Wife.PlaceOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Wife.PersonalNumber" class="control-label"></label>
+                    <input asp-for="Wife.PersonalNumber" class="form-control" />
+                    <span asp-validation-for="Wife.PersonalNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Wife.Nationality" class="control-label"></label>
+                    <input asp-for="Wife.Nationality" class="form-control" />
+                    <span asp-validation-for="Wife.Nationality" class="text-danger"></span>
+                </div>
+
+                @* Husband Parents *@
+                <h3>Husband Parents</h3>
+
+                <div class="form-group">
+                    <label asp-for="HusbandFather.FirstName" class="control-label"></label>
+                    <input asp-for="HusbandFather.FirstName" class="form-control" />
+                    <span asp-validation-for="HusbandFather.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="HusbandFather.LastName" class="control-label"></label>
+                    <input asp-for="HusbandFather.LastName" class="form-control" />
+                    <span asp-validation-for="HusbandFather.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="HusbandMother.FirstName" class="control-label"></label>
+                    <input asp-for="HusbandMother.FirstName" class="form-control" />
+                    <span asp-validation-for="HusbandMother.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="HusbandMother.LastName" class="control-label"></label>
+                    <input asp-for="HusbandMother.LastName" class="form-control" />
+                    <span asp-validation-for="HusbandMother.LastName" class="text-danger"></span>
+                </div>
+
+                @* Wife Parents *@
+                <h3>Wife Parents</h3>
+
+                <div class="form-group">
+                    <label asp-for="WifeFather.FirstName" class="control-label"></label>
+                    <input asp-for="WifeFather.FirstName" class="form-control" />
+                    <span asp-validation-for="WifeFather.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WifeFather.LastName" class="control-label"></label>
+                    <input asp-for="WifeFather.LastName" class="form-control" />
+                    <span asp-validation-for="WifeFather.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WifeMother.FirstName" class="control-label"></label>
+                    <input asp-for="WifeMother.FirstName" class="form-control" />
+                    <span asp-validation-for="WifeMother.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WifeMother.LastName" class="control-label"></label>
+                    <input asp-for="WifeMother.LastName" class="form-control" />
+                    <span asp-validation-for="WifeMother.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

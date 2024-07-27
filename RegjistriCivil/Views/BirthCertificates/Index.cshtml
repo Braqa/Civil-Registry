@@ -1,0 +1,101 @@
+﻿@model IEnumerable<RegjistriCivil.Models.BirthCertificate>
+@inject SignInManager<IdentityUser> signInManager
+@inject IAuthorizationService authorizationService
+
+@{
+    ViewData["Title"] = "Birth Certificates";
+}
+
+<div class="container-fluid">
+    <h1>Birth Certificates</h1>
+
+    <p>
+        @if (signInManager.IsSignedIn(User) && (User.IsInRole("Super Admin")||User.IsInRole("Admin") || User.IsInRole("User")))
+        {
+            <a asp-action="Create" class="btn btn-primary">Create New</a>
+        }
+    </p>
+    <table class="table" id="MyTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.DateOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.PersonalNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.PlaceOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.Nationality)
+                </th>
+                <th>
+                    Father Name
+                    @*@Html.DisplayNameFor(model => model.FatherDetails.FirstName)*@
+                </th>
+                <th>
+                    Mother Name
+                    @*@Html.DisplayNameFor(model => model.MotherDetails.FirstName)*@
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.DateOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.PersonalNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.PlaceOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.Nationality)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FatherDetails.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MotherDetails.FirstName)
+                    </td>
+                    <td>
+                        @if ((await authorizationService.AuthorizeAsync(User, "EditCertificatePolicy")).Succeeded)
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                        }
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a>
+                        @if ((await authorizationService.AuthorizeAsync(User, "DeleteCertificatePolicy")).Succeeded)
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#MyTable').DataTable();
+        });
+    </script>
+}

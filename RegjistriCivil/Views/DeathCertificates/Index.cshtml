@@ -1,0 +1,91 @@
+﻿@model IEnumerable<RegjistriCivil.Models.DeathCertificate>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid">
+    <h1>Death Certificates</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+    <table class="table" id="MyTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Person.DateOfBirth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfDeath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlaceOfDeath)
+                </th>
+                <th>
+                    Spouse FirstName
+                    @*@Html.DisplayNameFor(model => model.Spouse.FirstName)*@
+                </th>
+                <th>
+                    Father FirstName
+                    @*@Html.DisplayNameFor(model => model.Father.FirstName)*@
+                </th>
+                <th>
+                    Mother FirstName
+                    @*@Html.DisplayNameFor(model => model.Mother.FirstName)*@
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.DateOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfDeath)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlaceOfDeath)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Spouse.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Father.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mother.FirstName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a> 
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a> 
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#MyTable').DataTable();
+        });
+    </script>
+}

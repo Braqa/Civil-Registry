@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200517165335_InitialMigration.cs" />
+    <Compile Remove="Migrations\20200517165335_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200517170144_InitialMigration.cs" />
+    <Compile Remove="Migrations\20200517170144_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200517170412_InitialMigrate.cs" />
+    <Compile Remove="Migrations\20200517170412_InitialMigrate.Designer.cs" />
+    <Compile Remove="Migrations\20200517170941_Initial.cs" />
+    <Compile Remove="Migrations\20200517170941_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20200517205227_AddedCompositionAttributes.cs" />
+    <Compile Remove="Migrations\20200517205227_AddedCompositionAttributes.Designer.cs" />
+    <Compile Remove="Migrations\20200517220433_PersonAdded.cs" />
+    <Compile Remove="Migrations\20200517220433_PersonAdded.Designer.cs" />
+    <Compile Remove="Migrations\20200517220733_AddedForeignKeys.cs" />
+    <Compile Remove="Migrations\20200517220733_AddedForeignKeys.Designer.cs" />
+    <Compile Remove="Migrations\20200518154842_AddedFamilyMemberClass.cs" />
+    <Compile Remove="Migrations\20200518154842_AddedFamilyMemberClass.Designer.cs" />
+    <Compile Remove="Migrations\20200603222506_AddingIdentity.cs" />
+    <Compile Remove="Migrations\20200603222506_AddingIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20200603225803_AddingIdentity.cs" />
+    <Compile Remove="Migrations\20200603225803_AddingIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20200603230056_AddingIdentity.cs" />
+    <Compile Remove="Migrations\20200603230056_AddingIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20200604112145_AddingIdentity.cs" />
+    <Compile Remove="Migrations\20200604112145_AddingIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20200604153211_AddingIdentity.cs" />
+    <Compile Remove="Migrations\20200604153211_AddingIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20200604155709_AddingIdentity.cs" />
+    <Compile Remove="Migrations\20200604155709_AddingIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20200604160028_AddingIdentity.cs" />
+    <Compile Remove="Migrations\20200604160028_AddingIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20200604160346_AddingIdentity.cs" />
+    <Compile Remove="Migrations\20200604160346_AddingIdentity.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jquery.datatables" Version="1.10.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+</Project>

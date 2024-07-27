@@ -1,0 +1,107 @@
+﻿@model RegjistriCivil.Models.PersonStatistic
+
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="container">
+    <h1>Reports</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Person.PersonalNumber" class="control-label"></label>
+                    <input asp-for="Person.PersonalNumber" class="form-control" />
+                    <span asp-validation-for="Person.PersonalNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Person.FirstName" class="control-label"></label>
+                    <input asp-for="Person.FirstName" class="form-control" />
+                    <span asp-validation-for="Person.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.LastName" class="control-label"></label>
+                    <input asp-for="Person.LastName" class="form-control" />
+                    <span asp-validation-for="Person.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.DateOfBirth" class="control-label"></label>
+                    <input asp-for="Person.DateOfBirth" class="form-control" />
+                    <span asp-validation-for="Person.DateOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.Nationality" class="control-label"></label>
+                    <input asp-for="Person.Nationality" class="form-control" />
+                    <span asp-validation-for="Person.Nationality" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.PlaceOfBirth" class="control-label"></label>
+                    <input asp-for="Person.PlaceOfBirth" class="form-control" />
+                    <span asp-validation-for="Person.PlaceOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.Gender" class="control-label"></label>
+                    <select asp-for="Person.Gender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control">
+                        <option value="">Please select gender</option>
+                    </select>
+                    <span asp-validation-for="Person.Gender" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Employment" class="control-label"></label>
+                    <select asp-for="Employment" asp-items="Html.GetEnumSelectList<Employment>()" class="form-control">
+                        <option value="">Please select Employment</option>
+                    </select>
+                    <span asp-validation-for="Employment" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SchoolQualification" class="control-label"></label>
+                    <select asp-for="SchoolQualification" asp-items="Html.GetEnumSelectList<SchoolQualification>()" class="form-control">
+                        <option value="">Please select school qualification</option>
+                    </select>
+                    <span asp-validation-for="SchoolQualification" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="HealthStatus" class="control-label"></label>
+                    <select asp-for="HealthStatus" asp-items="Html.GetEnumSelectList<HealthStatus>()" class="form-control">
+                        <option value="">Please select health status</option>
+                    </select>
+                    <span asp-validation-for="HealthStatus" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                        <label asp-for="Diagnosis" class="control-label"></label>
+                        <input asp-for="Diagnosis" class="form-control" />
+                        <span asp-validation-for="Diagnosis" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <label asp-for="Migration" class="control-label"></label>
+                    <select asp-for="Migration" asp-items="Html.GetEnumSelectList<Migration>()" class="form-control">
+                        <option value="">Please select migration</option>
+                    </select>
+                    <span asp-validation-for="Migration" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                        <label asp-for="PlaceOfMigration" class="control-label"></label>
+                        <input asp-for="PlaceOfMigration" class="form-control" />
+                        <span asp-validation-for="PlaceOfMigration" class="text-danger"></span>
+                    </div>*@
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,146 @@
+﻿@model RegjistriCivil.Models.DeathCertificate
+
+@{
+    ViewData["Title"] = "Create Death Certificate";
+}
+
+<div class="container">
+    <h1>Create Death Certificate</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="DocumentIssuingDate" class="control-label"></label>
+                    <input asp-for="DocumentIssuingDate" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="DocumentIssuingDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DocumentIssuedBy" class="control-label"></label>
+                    <input asp-for="DocumentIssuedBy" class="form-control" readonly="readonly" />
+                    <span asp-validation-for="DocumentIssuedBy" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SerialNumber" class="control-label"></label>
+                    <input asp-for="SerialNumber" class="form-control" />
+                    <span asp-validation-for="SerialNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReferenceNumber" class="control-label"></label>
+                    <input asp-for="ReferenceNumber" class="form-control" />
+                    <span asp-validation-for="ReferenceNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Municipality" class="control-label"></label>
+                    <input asp-for="Municipality" class="form-control" />
+                    <span asp-validation-for="Municipality" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Person.FirstName" class="control-label"></label>
+                    <input asp-for="Person.FirstName" class="form-control" />
+                    <span asp-validation-for="Person.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.LastName" class="control-label"></label>
+                    <input asp-for="Person.LastName" class="form-control" />
+                    <span asp-validation-for="Person.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.DateOfBirth" class="control-label"></label>
+                    <input asp-for="Person.DateOfBirth" class="form-control" />
+                    <span asp-validation-for="Person.DateOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.Gender" class="control-label"></label>
+                    <select asp-for="Person.Gender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control">
+                        <option value="">Please select gender</option>
+                    </select>
+                    <span asp-validation-for="Person.Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.PlaceOfBirth" class="control-label"></label>
+                    <input asp-for="Person.PlaceOfBirth" class="form-control" />
+                    <span asp-validation-for="Person.PlaceOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.PersonalNumber" class="control-label"></label>
+                    <input asp-for="Person.PersonalNumber" class="form-control" />
+                    <span asp-validation-for="Person.PersonalNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Person.Nationality" class="control-label"></label>
+                    <input asp-for="Person.Nationality" class="form-control" />
+                    <span asp-validation-for="Person.Nationality" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateOfDeath" class="control-label"></label>
+                    <input asp-for="DateOfDeath" class="form-control" />
+                    <span asp-validation-for="DateOfDeath" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PlaceOfDeath" class="control-label"></label>
+                    <input asp-for="PlaceOfDeath" class="form-control" />
+                    <span asp-validation-for="PlaceOfDeath" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MaritalStatus" class="control-label"></label>
+                    <select asp-for="MaritalStatus" asp-items="Html.GetEnumSelectList<MaritalStatus>()" class="form-control">
+                        <option value="">Please select martial status</option>
+                    </select>
+                    <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                </div>
+
+
+                @* Spouse *@
+                <h3>Spouse</h3>
+                <div class="form-group">
+                    <label asp-for="Spouse.FirstName" class="control-label"></label>
+                    <input asp-for="Spouse.FirstName" class="form-control" />
+                    <span asp-validation-for="Spouse.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Spouse.LastName" class="control-label"></label>
+                    <input asp-for="Spouse.LastName" class="form-control" />
+                    <span asp-validation-for="Spouse.LastName" class="text-danger"></span>
+                </div>
+
+                <h3>Parents</h3>
+                @* Parents details off decease *@
+                <div class="form-group">
+                    <label asp-for="Father.FirstName" class="control-label"></label>
+                    <input asp-for="Father.FirstName" class="form-control" />
+                    <span asp-validation-for="Father.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Father.LastName" class="control-label"></label>
+                    <input asp-for="Father.LastName" class="form-control" />
+                    <span asp-validation-for="Father.LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mother.FirstName" class="control-label"></label>
+                    <input asp-for="Mother.FirstName" class="form-control" />
+                    <span asp-validation-for="Mother.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mother.LastName" class="control-label"></label>
+                    <input asp-for="Mother.LastName" class="form-control" />
+                    <span asp-validation-for="Mother.LastName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<RegjistriCivil.Models.MarriageCertificate>
+
+@{
+    ViewData["Title"] = "Marriage Certificates";
+}
+
+<div class="container-fluid">
+    <h1>Marriage Certificates</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+    <table class="table" id="MyTable">
+        <thead>
+            <tr>
+                <th>
+                    Husband FirstName
+                    @*@Html.DisplayNameFor(model => model.Husband.FirstName)*@
+                </th>
+                <th>
+                    Husband LastName
+                    @*@Html.DisplayNameFor(model => model.Husband.LastName)*@
+                </th>
+                <th>
+                    Wife FirstName
+                    @*@Html.DisplayNameFor(model => model.Wife.FirstName)*@
+                </th>
+                <th>
+                    Wife LastName
+                    @*@Html.DisplayNameFor(model => model.Wife.LastName)*@
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DateOfMarriage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlaceOfMarriage)
+                </th>
+                <th>
+                    Husband Date of Birth
+                    @*@Html.DisplayNameFor(model => model.Husband.DateOfBirth)*@
+                </th>
+                <th>
+                    Wife Date of Birth
+                    @*@Html.DisplayNameFor(model => model.Wife.DateOfBirth)*@
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Husband.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Husband.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Wife.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Wife.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfMarriage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlaceOfMarriage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Husband.DateOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Wife.DateOfBirth)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a> 
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Details</a> 
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#MyTable').DataTable();
+        });
+    </script>
+}

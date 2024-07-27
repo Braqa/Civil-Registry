@@ -1,0 +1,214 @@
+﻿@model RegjistriCivil.Models.MarriageCertificate
+
+@{
+    ViewData["Title"] = "Details of Marriage Certificate";
+}
+
+<div class="container">
+    <h1>Details of Marriage Certificate</h1>
+
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DocumentIssuingDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DocumentIssuingDate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DocumentIssuedBy)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DocumentIssuedBy)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SerialNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SerialNumber)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ReferenceNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ReferenceNumber)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Municipality)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Municipality)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PlaceOfMarriage)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PlaceOfMarriage)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DateOfMarriage)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DateOfMarriage)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.MaritalStatus)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.MaritalStatus)
+            </dd>
+
+
+            @* Huband *@
+            <dt class="col-sm-2">
+                Husband FirstName
+                @*@Html.DisplayNameFor(model => model.Husband.FirstName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Husband.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                Husband LastName
+                @*@Html.DisplayNameFor(model => model.Husband.LastName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Husband.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                Husband DateOfBirth
+                @*@Html.DisplayNameFor(model => model.Husband.DateOfBirth)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Husband.DateOfBirth)
+            </dd>
+            <dt class="col-sm-2">
+                Husband PlaceOfBirth
+                @*@Html.DisplayNameFor(model => model.Husband.PlaceOfBirth)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Husband.PlaceOfBirth)
+            </dd>
+            <dt class="col-sm-2">
+                Husband PersonalNo
+                @*@Html.DisplayNameFor(model => model.Husband.PersonalNumber)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Husband.PersonalNumber)
+            </dd>
+            <dt class="col-sm-2">
+                Husband Nationality
+                @*@Html.DisplayNameFor(model => model.Husband.Nationality)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Husband.Nationality)
+            </dd>
+            @* Wife *@
+            <dt class="col-sm-2">
+                Wife FirstName
+                @*@Html.DisplayNameFor(model => model.Wife.FirstName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Wife.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                Wife LastName
+                @*@Html.DisplayNameFor(model => model.Wife.LastName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Wife.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                Wife DateOfBirth
+                @*@Html.DisplayNameFor(model => model.Wife.DateOfBirth)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Wife.DateOfBirth)
+            </dd>
+            <dt class="col-sm-2">
+                Wife PlaceOfBirth
+                @*@Html.DisplayNameFor(model => model.Wife.PlaceOfBirth)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Wife.PlaceOfBirth)
+            </dd>
+            <dt class="col-sm-2">
+                Wife PersonalNo
+                @*@Html.DisplayNameFor(model => model.Wife.PersonalNumber)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Wife.PersonalNumber)
+            </dd>
+            <dt class="col-sm-2">
+                Wife Nationality
+                @*@Html.DisplayNameFor(model => model.Wife.Nationality)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Wife.Nationality)
+            </dd>
+            @* Husband Parents *@
+            <dt class="col-sm-2">
+                HusbandFather FirstName
+                @*@Html.DisplayNameFor(model => model.HusbandFather.FirstName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HusbandFather.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                HusbandFather LastName
+                @*@Html.DisplayNameFor(model => model.HusbandFather.LastName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HusbandFather.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                HusbandMother FirstName
+                @*@Html.DisplayNameFor(model => model.HusbandMother.FirstName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HusbandMother.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                HusbandMother LastName
+                @*@Html.DisplayNameFor(model => model.HusbandMother.LastName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HusbandMother.LastName)
+            </dd>
+
+            @* Wife Parents *@
+            <dt class="col-sm-2">
+                WifeFather FirstName
+                @*@Html.DisplayNameFor(model => model.WifeFather.FirstName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.WifeFather.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                WifeFather LastName
+                @*@Html.DisplayNameFor(model => model.WifeFather.LastName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.WifeFather.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                WifeMother FirstName
+                @*@Html.DisplayNameFor(model => model.WifeMother.FirstName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.WifeMother.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                WifeMother LastName
+                @*@Html.DisplayNameFor(model => model.WifeMother.LastName)*@
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.WifeMother.LastName)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a> 
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
